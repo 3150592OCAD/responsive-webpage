@@ -1,0 +1,101 @@
+@media screen {
+	@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,500i,800');
+
+	@media (max-width:750px){
+		h1 {
+			font-size: 9vw;
+		}
+		h2{
+			font-size: 7vw;
+		}
+	}
+
+	body {
+		margin: 0;
+		background: #e2e2e2;
+		color: #142810;
+		font-size: 2em;
+		font-weight: 300;
+		font-family: 'Libre Franklin', helvetica, sans-serif;
+	}
+	main {
+		margin: 5vh 10vw;
+	}
+	h1 {
+		text-indent: -0.5em;
+		font-weight: 800;
+	}
+	h2 {
+		font-weight: 500;
+		font-style: italic;
+	}
+
+	@media (min-width:1000px) {
+		body {
+			font-size: 2.5em;
+		}
+		h1 {
+			margin-bottom: 0;
+			grid-area: header;
+			grid-row: 1;
+		}
+		h2 {
+			margin-top: 0;
+			grid-area: header;
+			grid-row: 2;
+		}
+		p:nth-child(odd) {
+			grid-area: main1;
+		}
+		p:nth-child(even) {
+			grid-area: main2;
+		}
+		main {
+			display: grid;
+			grid-gap: 2vw;
+			grid-template-columns: 2fr 5fr;
+			grid-template-areas:
+				'header header'
+				'header header'
+				'main1 main2';
+		}
+	}
+	@media (min-width:1400px) {
+		main {
+			grid-template-columns: 1fr 2fr;
+			max-width: 40em;
+		}
+	}
+}
+
+@media print {
+	@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:700|Spectral:400,400i');
+	@page { margin: 0; }
+	body {
+		font-family: 'Spectral', serif;
+		margin: 1in;
+	}
+	h1 {
+		text-indent: -0.5em;
+		padding: 0;
+		margin: 0;
+		font-family: 'Libre Franklin', helvetica, sans-serif;
+		font-size: 36pt;
+		line-height: 1.25em;
+	}
+	h2 {
+		padding: 0;
+		margin: 0;
+		font-size: 18pt;
+		font-style: italic;
+		font-weight: 400;
+		line-height: 1.25em;
+		padding-bottom: 2em;
+	}
+	p {
+		padding: 0;
+		margin: 0;
+		font-size: 12pt;
+		padding-bottom: 1.5em;
+	}
+}
